@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI MCQ Solver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="logo">AI</div>
+      <div>
+        <h1>MCQ Solver</h1>
+        <p class="sub">Scan · Solve · Understand</p>
+      </div>
+    </header>
+
+    <label for="backendUrl">Backend URL</label>
+    <input id="backendUrl" type="url" value="http://localhost:3000" spellcheck="false">
+    <button id="saveUrl" class="secondary">Save backend URL</button>
+
+    <button id="scanBtn" class="primary">
+      <span aria-hidden="true">⌕</span> Scan visible question
+    </button>
+    <p class="hint">Keep the question and all answer choices visible before scanning.</p>
+
+    <button id="selectedTextBtn" class="secondary">Solve selected text</button>
+    <p class="hint">First highlight the question and all choices on the page. This sends text only—no screenshot.</p>
+
+    <button id="selectAreaBtn" class="secondary">Select question area</button>
+    <p class="hint">Draw a border around the question and choices. Only readable text inside the border is sent—no image.</p>
+
+    <section id="status" class="status" aria-live="polite">Ready when you are.</section>
+    <section id="result" class="result hidden">
+      <div class="answer-label">Suggested answer</div>
+      <h2 id="answer"></h2>
+      <p id="explanation"></p>
+      <div id="confidence" class="confidence"></div>
+      <div id="caution" class="caution">Use this as a study aid. Verify important answers against your course material.</div>
+    </section>
+    <footer>
+      Visible question text and a screenshot of the active page are sent to your configured backend for AI analysis.
+      Do not scan private or sensitive information.
+    </footer>
+  </main>
+  <script src="solver.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

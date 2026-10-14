@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "AI MCQ Solver",
+  "version": "1.0.0",
+  "description": "Scan a visible multiple-choice question and get an AI explanation for practice and revision.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "commands": {
+    "run-solver": {
+      "description": "Activate AI MCQ Solver"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["http://localhost:3000/*", "http://127.0.0.1:3000/*"],
+  "action": {
+    "default_title": "AI MCQ Solver",
+    "default_popup": "popup.html"
+  },
+  "icons": {}
+}
